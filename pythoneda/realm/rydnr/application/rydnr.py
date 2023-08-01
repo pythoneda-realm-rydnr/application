@@ -20,7 +20,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 import asyncio
 from pythoneda.application.pythoneda import PythonEDA
-from pythoneda.shared.artifact_changes.events.change_staging_requested import ChangeStagingRequested
 
 class Rydnr(PythonEDA):
     """
@@ -34,7 +33,7 @@ class Rydnr(PythonEDA):
     Collaborators:
         - Command-line handlers from pythoneda-realm-rydnr/infrastructure
     """
-    def __init__(self):
+    def __init__(self, file=__file__):
         """
         Creates a new Rydnr instance.
         """
