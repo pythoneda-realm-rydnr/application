@@ -19,7 +19,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 import asyncio
-from pythoneda.application.pythoneda import PythonEDA
+from pythoneda.application import PythonEDA
 
 class Rydnr(PythonEDA):
     """
