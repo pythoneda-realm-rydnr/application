@@ -19,7 +19,6 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 import asyncio
-import logging
 from pythoneda.application import PythonEDA
 
 class RydnrApp(PythonEDA):
@@ -49,4 +48,4 @@ class RydnrApp(PythonEDA):
         super().__init__(banner, __file__)
 
 if __name__ == "__main__":
-    asyncio.run(RydnrApp.main())
+    asyncio.run(RydnrApp.main("pythoneda.realm.rydnr.Rydnr"))
