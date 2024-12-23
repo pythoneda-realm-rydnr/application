@@ -20,7 +20,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 import asyncio
-from pythoneda.shared.application import PythonEDA
+from dbus_next import BusType
+from pythoneda.shared.application import enable, PythonEDA
 from pythoneda.realm.rydnr.events.infrastructure.dbus import (
     DbusChangeStagingCodeRequestDelegated,
 )
