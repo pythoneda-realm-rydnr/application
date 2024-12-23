@@ -21,8 +21,35 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 import asyncio
 from pythoneda.shared.application import PythonEDA
+from pythoneda.realm.rydnr.events.infrastructure.dbus import (
+    DbusChangeStagingCodeRequestDelegated,
+)
+from pythoneda.realm.rydnr.infrastructure.dbus import RydnrDbusSignalListener
+from pythoneda.shared.artifact.events.code.infrastructure.dbus import (
+    DbusChangeStagingCodePackaged,
+)
+from pythoneda.shared.artifact.events.infrastructure.dbus import (
+    DbusStagedChangesCommitted,
+)
 
 
+@enable(
+    RydnrDbusSignalListener,
+    events=[
+        {
+            "event-class": DbusChangeStagingCodeRequestDelegated,
+            "bus-type": BusType.SYSTEM,
+        },
+        {
+            "event-class": DbusChangeStagingCodePackaged,
+            "bus-type": BusType.SYSTEM,
+        },
+        {
+            "event-class": DbusStagedChangesCommitted,
+            "bus-type": BusType.SYSTEM,
+        },
+    ],
+)
 class RydnrApp(PythonEDA):
     """
     Runs the Rydnr's PythonEDA realm.
